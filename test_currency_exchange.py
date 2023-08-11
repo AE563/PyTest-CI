@@ -1,4 +1,5 @@
 import pytest
+import time
 from requests import Response
 
 from unittest.mock import Mock, patch
@@ -6,8 +7,24 @@ from unittest.mock import Mock, patch
 from currency_exchange import currency_exchange
 
 
+@pytest.fixture(scope="function", autouse=True)
+def time_fixture(request):
+    start_time = time.time()
+    yield
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Test took {execution_time:.4f} seconds to run")
+
+
 # Позитивные тесты
-def test_currency_exchange_positive():
+@patch('currency_exchange.requests.get')
+def test_currency_exchange_positive(mock_get):
+    # Создаем мок объект для имитации ответа от API
+    response_mock = Mock()
+    response_mock.status_code = 200
+    response_mock.json.return_value = {"base": "USD", "rates": {"EUR": 0.85}}
+    mock_get.return_value = response_mock
+
     # Проверяем успешную конвертацию с USD в EUR с базовой суммой 1
     result = currency_exchange(base='USD', symbols='EUR')
     assert isinstance(result, float)
@@ -50,19 +67,19 @@ def test_currency_exchange_negative_source_wrong():
 
 
 # Негативный тест для проверки статуса ответа от API
-def test_currency_exchange_api_status_negative():
+@patch('currency_exchange.requests.get')
+def test_currency_exchange_api_status_negative(mock_get):
     # Создаем мок объект для имитации ответа от API с некорректным статусом
     response_mock = Mock(spec=Response)
     response_mock.status_code = 404  # Устанавливаем статус код 404
+    mock_get.return_value = response_mock
 
-    # Имитируем запрос к API с помощью патча
-    with patch('requests.get', return_value=response_mock) as mock_request:
-        # Проверяем, что функция вызовет ValueError с соответствующим сообщением
-        with pytest.raises(ValueError, match=r"Invalid response from API: Status code 404"):
-            currency_exchange(base='USD', symbols='EUR', amount=100)
+    # Проверяем, что функция вызовет ValueError с соответствующим сообщением
+    with pytest.raises(ValueError, match=r"Invalid response from API: Status code 404"):
+        currency_exchange(base='USD', symbols='EUR', amount=100)
 
-        # Проверяем, что запрос к API был выполнен с нужными параметрами
-        mock_request.assert_called_once_with(
-            'https://api.exchangerate.host/latest',
-            params={'base': 'USD', 'symbols': 'EUR', 'amount': 100, 'places': 2, 'source': 'ecb'}
-        )
+    # Проверяем, что запрос к API был выполнен с нужными параметрами
+    mock_get.assert_called_once_with(
+        'https://api.exchangerate.host/latest',
+        params={'base': 'USD', 'symbols': 'EUR', 'amount': 100, 'places': 2, 'source': 'ecb'}
+    )
