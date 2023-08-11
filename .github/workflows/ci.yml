@@ -23,10 +23,5 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Set PYTHONPATH
-      run: |
-        export PYTHONPATH=$PYTHONPATH:${{ github.workspace }}/src
-        export PYTHONPATH=$PYTHONPATH:${{ github.workspace }}/tests
-
     - name: Run tests
       run: pytest tests/
