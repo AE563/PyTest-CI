@@ -3,7 +3,7 @@ from requests import Response
 
 from unittest.mock import Mock, patch
 
-from currency_exchange import currency_exchange
+from src.currency_exchange import currency_exchange
 
 
 # Позитивные тесты
