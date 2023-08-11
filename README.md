@@ -4,7 +4,7 @@
 
 - [x] [yield - посмотреть что делает](notes/notes_yield.md)
 - [x] [Какие у `pytest` есть другие декораторы. Посмотреть только основные.](notes/notes_@pytest.md)
-- [x] Поднять GithubActions на примере любого проекта JBZoo. Запускать пайплайн автоматически при любом пуше в мастер.
+- [x] [Поднять GithubActions на примере любого проекта JBZoo. Запускать пайплайн автоматически при любом пуше в мастер.](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml)
 ____
 
 
