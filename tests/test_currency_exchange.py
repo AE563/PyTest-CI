@@ -4,7 +4,7 @@ from requests import Response
 
 from unittest.mock import Mock, patch
 
-from currency_exchange import currency_exchange
+from folder_name.currency_exchange import currency_exchange
 
 
 @pytest.fixture(scope="function", autouse=True)
@@ -17,7 +17,7 @@ def time_fixture(request):
 
 
 # Позитивные тесты
-@patch('currency_exchange.requests.get')
+@patch('folder_name.currency_exchange.requests.get')
 def test_currency_exchange_positive(mock_get):
     # Создаем мок объект для имитации ответа от API
     response_mock = Mock()
@@ -67,7 +67,7 @@ def test_currency_exchange_negative_source_wrong():
 
 
 # Негативный тест для проверки статуса ответа от API
-@patch('currency_exchange.requests.get')
+@patch('folder_name.currency_exchange.requests.get')
 def test_currency_exchange_api_status_negative(mock_get):
     # Создаем мок объект для имитации ответа от API с некорректным статусом
     response_mock = Mock(spec=Response)
