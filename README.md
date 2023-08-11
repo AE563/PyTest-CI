@@ -1,3 +1,4 @@
+[![CI](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml/badge.svg)](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml)
 # ToDo
 - [x] Сделать CI
 - [ ] Перепроверить исходную
