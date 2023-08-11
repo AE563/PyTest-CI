@@ -24,7 +24,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Set PYTHONPATH
-      run: export PYTHONPATH=$PYTHONPATH:${{ github.workspace }}/src1
+      run: export PYTHONPATH=$PYTHONPATH:${{ github.workspace }}
 
     - name: Run tests
       run: pytest tests/
