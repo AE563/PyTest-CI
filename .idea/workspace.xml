@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/currency_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency_exchange.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_currency_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_currency_exchange.py" afterDir="false" />
+    <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="minor fix README.md">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,14 +21,19 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2TpemUtyktwIVnDo8PBZPo4mmyp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -67,11 +73,45 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691744608770</updated>
-      <workItem from="1691744609792" duration="392000" />
+      <workItem from="1691744609792" duration="1449000" />
     </task>
+    <task id="LOCAL-00001" summary="Deployed the project">
+      <option name="closed" value="true" />
+      <created>1691745010979</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691745010979</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add ToDo in README.md">
+      <option name="closed" value="true" />
+      <created>1691745265771</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691745265771</updated>
+    </task>
+    <task id="LOCAL-00003" summary="minor fix README.md">
+      <option name="closed" value="true" />
+      <created>1691745324123</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691745324123</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Deployed the project" />
+    <MESSAGE value="add ToDo in README.md" />
+    <MESSAGE value="minor fix README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fix README.md" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PyTest_CI$.coverage" NAME=" Coverage Results" MODIFIED="1691745654440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
