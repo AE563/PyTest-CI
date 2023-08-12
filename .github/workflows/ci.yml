@@ -37,10 +37,9 @@ jobs:
     - name: Deploy to Hosting
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SSH_USER: ${{ secrets.SSH_USER }}
       run: |
-        echo "$SSH_PRIVATE_KEY" > deploy_key
-        chmod 600 deploy_key
-        ssh-agent bash -c "ssh-add deploy_key;
-        cd /home/c/cz24360/public_html
-        echo 'Hello Test' > test.md"
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan vh304.timeweb.ru >> ~/.ssh/known_hosts
+        ssh -i ~/.ssh/id_rsa "cz24360@vh304.timeweb.ru" "cd /home/c/cz24360/public_html && echo 'Hello Test' > test.md"
