@@ -46,5 +46,5 @@ jobs:
         mkdir -p ~/.ssh
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan vh304.timeweb.ru >> ~/.ssh/known_hosts
-        ssh -i ~/.ssh/id_rsa "$SSH_USER" "cd $SSH_PATH/public_html/test_deploy && git pull"
+        ssh-keyscan "$SSH_HOST" >> ~/.ssh/known_hosts
+        ssh -i ~/.ssh/id_rsa "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html/test_deploy && git pull"
