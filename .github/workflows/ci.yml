@@ -48,5 +48,3 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan $SSH_END_POINT >> ~/.ssh/known_hosts
         ssh -i ~/.ssh/id_rsa "$SSH_USER" "cd $SSH_PATH/public_html/test_deploy/PyTest-CI && git pull"
-        ssh -i ~/.ssh/id_rsa "$SSH_USER" "cd $SSH_PATH/venv/bin && source activate"
-        ssh -i ~/.ssh/id_rsa "$SSH_USER" "cd $SSH_PATH/public_html/test_deploy/PyTest-CI && $SSH_PATH/venv/bin/python3 -m pip install -r requirements.txt"
