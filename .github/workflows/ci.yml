@@ -43,5 +43,4 @@ jobs:
         chmod 600 deploy_key
         ssh-agent bash -c "ssh-add deploy_key;
         cd public_html/
-        touch test_connect.md
-        echo 'Hello Test' > test_connect.md"
+        echo 'Hello Test' > test.md"
