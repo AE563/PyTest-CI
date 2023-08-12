@@ -43,4 +43,5 @@ jobs:
         chmod 600 deploy_key
         ssh-agent bash -c "ssh-add deploy_key;
         cd /home/c/cz24360/public_html
-        echo 'Hello Test' > test.md"
+        echo 'Hello Test' > test.md
+        deactivate"
