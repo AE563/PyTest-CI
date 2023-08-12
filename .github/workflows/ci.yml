@@ -42,5 +42,5 @@ jobs:
         echo "$SSH_PRIVATE_KEY" > deploy_key
         chmod 600 deploy_key
         ssh-agent bash -c "ssh-add deploy_key;
-        cd public_html/
+        cd /home/c/cz24360/public_html/
         echo 'Hello Test' > test.md"
