@@ -43,10 +43,10 @@ jobs:
         SSH_END_POINT: ${{ secrets.SSH_END_POINT }}
 
       run: |
-        mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+        echo "$SSH_PRIVATE_KEY" > deploy_key
+        chmod 600 deploy_key
         ssh-keyscan "$SSH_HOST" >> ~/.ssh/known_hosts
-        ssh -i ~/.ssh/id_rsa "$SSH_USER" "cd $SSH_PATH/public_html/test_deploy && echo 'OLOLO!' > test.md"
-        ssh -i ~/.ssh/id_rsa "$SSH_USER" "cd $SSH_PATH/public_html && git pull"
-        ssh -i ~/.ssh/id_rsa "$SSH_USER" "cd $SSH_PATH/public_html && pip install -r requirements.txt"
+        scp -i deploy_key deploy_key "$SSH_USER@$SSH_HOST:/tmp/deploy_key"
+        ssh -i deploy_key "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html/test_deploy && echo 'OLOLO!' > test.md"
+        ssh -i deploy_key "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html && git pull"
+        ssh -i deploy_key "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html && pip install -r requirements.txt"
