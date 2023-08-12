@@ -45,8 +45,10 @@ jobs:
       run: |
         echo "$SSH_PRIVATE_KEY" > deploy_key
         chmod 600 deploy_key
+        mv deploy_key ~/.ssh/id_rsa
         ssh-keyscan "$SSH_HOST" >> ~/.ssh/known_hosts
-        scp -i deploy_key deploy_key "$SSH_USER@$SSH_HOST:/tmp/deploy_key"
-        ssh -i deploy_key "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html/test_deploy && echo 'OLOLO!' > test.md"
-        ssh -i deploy_key "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html && git pull"
-        ssh -i deploy_key "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html && pip install -r requirements.txt"
+        scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ~/.ssh/known_hosts "$SSH_USER@$SSH_HOST:/tmp/known_hosts"
+        ssh -i ~/.ssh/id_rsa "$SSH_USER@$SSH_HOST" "mv /tmp/known_hosts ~/.ssh/known_hosts"
+        ssh -i ~/.ssh/id_rsa "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html/test_deploy && echo 'OLOLO!' > test.md"
+        ssh -i ~/.ssh/id_rsa "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html && git pull"
+        ssh -i ~/.ssh/id_rsa "$SSH_USER@$SSH_HOST" "cd $SSH_PATH/public_html && pip install -r requirements.txt"
