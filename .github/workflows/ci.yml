@@ -44,4 +44,4 @@ jobs:
         ssh-agent bash -c "ssh-add deploy_key;
         cd public_html/
         touch test_connect.md
-        echo 'Hello Test''s' > test_connect.md
+        echo 'Hello Test' > test_connect.md
