@@ -26,7 +26,22 @@ jobs:
     - name: Run tests
       run: pytest
 
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v3
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy to Hosting
       env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_USER: ${{ secrets.SSH_USER }}
+      run: |
+        echo "$SSH_PRIVATE_KEY" > deploy_key
+        chmod 600 deploy_key
+        ssh-agent bash -c "ssh-add deploy_key;
+        touch test_connect.md
+        echo 'Hello Test''s' > test_connect.md
+        deactivate"

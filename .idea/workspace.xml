@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="minor fix README.md">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="fix">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +13,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,22 +40,82 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ae563/PycharmProjects/PyTest-CI&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testts" />
+      <recent name="$PROJECT_DIR$/folder_name" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests in test_currency_exchange.py">
+    <configuration name="Python tests for tests.test_currency_exchange.test_currency_exchange_api_status_negative" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PyTest-CI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_currency_exchange.test_currency_exchange_api_status_negative&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.test_currency_exchange.test_currency_exchange_negative_base_value_error" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PyTest-CI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_currency_exchange.test_currency_exchange_negative_base_value_error&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.test_currency_exchange.test_currency_exchange_positive" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PyTest-CI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_currency_exchange.test_currency_exchange_positive&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests in test_currency_exchange.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PyTest-CI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -55,12 +127,16 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_currency_exchange.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_currency_exchange.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in test_currency_exchange.py" />
+        <item itemvalue="Python tests.Python tests for tests.test_currency_exchange.test_currency_exchange_api_status_negative" />
+        <item itemvalue="Python tests.Python tests for tests.test_currency_exchange.test_currency_exchange_positive" />
+        <item itemvalue="Python tests.Python tests for tests.test_currency_exchange.test_currency_exchange_negative_base_value_error" />
         <item itemvalue="Python tests.Python tests in test_currency_exchange.py" />
       </list>
     </recent_temporary>
@@ -73,7 +149,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691744608770</updated>
-      <workItem from="1691744609792" duration="1449000" />
+      <workItem from="1691744609792" duration="14104000" />
+      <workItem from="1691811878083" duration="1046000" />
     </task>
     <task id="LOCAL-00001" summary="Deployed the project">
       <option name="closed" value="true" />
@@ -99,19 +176,305 @@
       <option name="project" value="LOCAL" />
       <updated>1691745324123</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add ci.yml, requirements.txt">
+      <option name="closed" value="true" />
+      <created>1691746093944</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691746093944</updated>
+    </task>
+    <task id="LOCAL-00005" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691746369935</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691746369935</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ci.yml run when push on master branches">
+      <option name="closed" value="true" />
+      <created>1691747394351</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1691747394351</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ci.yml run when push on *main branches">
+      <option name="closed" value="true" />
+      <created>1691747430427</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1691747430427</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ci.yml up actions ver">
+      <option name="closed" value="true" />
+      <created>1691747689918</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1691747689918</updated>
+    </task>
+    <task id="LOCAL-00009" summary="ci.yml minor fix">
+      <option name="closed" value="true" />
+      <created>1691747740449</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1691747740449</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add badge to README.md">
+      <option name="closed" value="true" />
+      <created>1691748057845</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1691748057845</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add codecov on ci.yml">
+      <option name="closed" value="true" />
+      <created>1691748496882</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1691748496882</updated>
+    </task>
+    <task id="LOCAL-00012" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691749042101</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1691749042101</updated>
+    </task>
+    <task id="LOCAL-00013" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691749771011</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1691749771011</updated>
+    </task>
+    <task id="LOCAL-00014" summary="minor fix README.md">
+      <option name="closed" value="true" />
+      <created>1691766669276</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1691766669276</updated>
+    </task>
+    <task id="LOCAL-00015" summary="minor fix README.md">
+      <option name="closed" value="true" />
+      <created>1691767131990</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1691767131990</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add фикстуры и йелд">
+      <option name="closed" value="true" />
+      <created>1691769464189</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1691769464189</updated>
+    </task>
+    <task id="LOCAL-00017" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691769542017</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1691769542017</updated>
+    </task>
+    <task id="LOCAL-00018" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691769618241</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1691769618241</updated>
+    </task>
+    <task id="LOCAL-00019" summary="updated the folder structure">
+      <option name="closed" value="true" />
+      <created>1691769822451</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1691769822451</updated>
+    </task>
+    <task id="LOCAL-00020" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691769896678</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1691769896678</updated>
+    </task>
+    <task id="LOCAL-00021" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691776650181</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1691776650181</updated>
+    </task>
+    <task id="LOCAL-00022" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691776769579</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1691776769579</updated>
+    </task>
+    <task id="LOCAL-00023" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691776889750</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1691776889750</updated>
+    </task>
+    <task id="LOCAL-00024" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691777208255</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1691777208255</updated>
+    </task>
+    <task id="LOCAL-00025" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691777304953</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1691777304953</updated>
+    </task>
+    <task id="LOCAL-00026" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691777864581</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1691777864581</updated>
+    </task>
+    <task id="LOCAL-00027" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691778103610</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1691778103610</updated>
+    </task>
+    <task id="LOCAL-00028" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691778466304</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1691778466304</updated>
+    </task>
+    <task id="LOCAL-00029" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691779125149</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1691779125149</updated>
+    </task>
+    <task id="LOCAL-00030" summary="minor fix">
+      <option name="closed" value="true" />
+      <created>1691779183082</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1691779183082</updated>
+    </task>
+    <task id="LOCAL-00031" summary="edit README.md">
+      <option name="closed" value="true" />
+      <created>1691779291271</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1691779291271</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add time_fixture">
+      <option name="closed" value="true" />
+      <created>1691780208893</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1691780208893</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix">
+      <option name="closed" value="true" />
+      <created>1691780720696</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1691780720696</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fix">
+      <option name="closed" value="true" />
+      <created>1691780728195</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1691780728195</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix">
+      <option name="closed" value="true" />
+      <created>1691780941410</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1691780941410</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix">
+      <option name="closed" value="true" />
+      <created>1691781181032</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1691781181032</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fix">
+      <option name="closed" value="true" />
+      <created>1691781194447</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1691781194447</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Deployed the project" />
     <MESSAGE value="add ToDo in README.md" />
+    <MESSAGE value="add ci.yml, requirements.txt" />
+    <MESSAGE value="ci.yml run when push on master branches" />
+    <MESSAGE value="ci.yml run when push on *main branches" />
+    <MESSAGE value="ci.yml up actions ver" />
+    <MESSAGE value="ci.yml minor fix" />
+    <MESSAGE value="add badge to README.md" />
+    <MESSAGE value="add codecov on ci.yml" />
     <MESSAGE value="minor fix README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fix README.md" />
+    <MESSAGE value="add фикстуры и йелд" />
+    <MESSAGE value="updated the folder structure" />
+    <MESSAGE value="minor fix" />
+    <MESSAGE value="edit README.md" />
+    <MESSAGE value="add time_fixture" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PyTest_CI$.coverage" NAME=" Coverage Results" MODIFIED="1691745654440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyTest_CI$.coverage" NAME=" Coverage Results" MODIFIED="1691780914859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
