@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="fix">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-    </list>
+    <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,31 +147,7 @@
       <option name="presentableId" value="Default" />
       <updated>1691744608770</updated>
       <workItem from="1691744609792" duration="14104000" />
-      <workItem from="1691811878083" duration="5340000" />
-    </task>
-    <task id="LOCAL-00007" summary="ci.yml run when push on *main branches">
-      <option name="closed" value="true" />
-      <created>1691747430427</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1691747430427</updated>
-    </task>
-    <task id="LOCAL-00008" summary="ci.yml up actions ver">
-      <option name="closed" value="true" />
-      <created>1691747689918</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1691747689918</updated>
-    </task>
-    <task id="LOCAL-00009" summary="ci.yml minor fix">
-      <option name="closed" value="true" />
-      <created>1691747740449</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1691747740449</updated>
+      <workItem from="1691811878083" duration="5664000" />
     </task>
     <task id="LOCAL-00010" summary="add badge to README.md">
       <option name="closed" value="true" />
@@ -543,7 +517,31 @@
       <option name="project" value="LOCAL" />
       <updated>1691818253166</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="fix">
+      <option name="closed" value="true" />
+      <created>1691818373265</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1691818373265</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fix">
+      <option name="closed" value="true" />
+      <created>1691818446032</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1691818446032</updated>
+    </task>
+    <task id="LOCAL-00058" summary="fix">
+      <option name="closed" value="true" />
+      <created>1691818509157</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1691818509157</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
