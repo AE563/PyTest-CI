@@ -18,13 +18,11 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install Hatch
-      run: /usr/bin/python3 -m pip install hatch
-
     - name: Install dependencies
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
+        pip install hatch
 
     - name: Run tests and collect coverage
       run: hatch run cov
