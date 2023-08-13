@@ -22,15 +22,15 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
-        pip install hatch
+        pip install pytest-cov
 
-    - name: Run tests and collect coverage
-      run: hatch
+    - name: Run tests
+      run: pytest
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   deploy:
     needs: build
