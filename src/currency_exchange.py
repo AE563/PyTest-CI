@@ -71,3 +71,4 @@ def currency_exchange(base: str = 'USD',
     result = data['rates'][symbols]
 
     return result
+
