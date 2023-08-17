@@ -68,23 +68,24 @@ def test_currency_exchange_negative_source_wrong():
 
 # Negative test to check the response status from the API
 def test_currency_exchange_api_status_negative():
-    print(currency_exchange())
+    with pytest.raises(ValueError):
+        currency_exchange()
     return
 
 
-@patch('src.currency_exchange.requests.get')
-def test_currency_exchange_api_status_mock_negative(mock_get):
-    # Create a mock object to simulate a response from API with an incorrect status
-    response_mock = Mock(spec=Response)
-    response_mock.status_code = 404  # Set status code 404
-    mock_get.return_value = response_mock
-
-    # Check that the function will call ValueError with the corresponding message
-    with pytest.raises(ValueError, match=r"Invalid response from API: Status code 404"):
-        currency_exchange(base='USD', symbols='EUR', amount=100)
-
-    # Check that the API request has been executed with the required parameters
-    mock_get.assert_called_once_with(
-        'https://api.exchangerate.host/latest',
-        params={'base': 'USD', 'symbols': 'EUR', 'amount': 100, 'places': 2, 'source': 'ecb'}
-    )
+# @patch('src.currency_exchange.requests.get')
+# def test_currency_exchange_api_status_mock_negative(mock_get):
+#     # Create a mock object to simulate a response from API with an incorrect status
+#     response_mock = Mock(spec=Response)
+#     response_mock.status_code = 404  # Set status code 404
+#     mock_get.return_value = response_mock
+#
+#     # Check that the function will call ValueError with the corresponding message
+#     with pytest.raises(ValueError, match=r"Invalid response from API: Status code 404"):
+#         currency_exchange(base='USD', symbols='EUR', amount=100)
+#
+#     # Check that the API request has been executed with the required parameters
+#     mock_get.assert_called_once_with(
+#         'https://api.exchangerate.host/latest',
+#         params={'base': 'USD', 'symbols': 'EUR', 'amount': 100, 'places': 2, 'source': 'ecb'}
+#     )

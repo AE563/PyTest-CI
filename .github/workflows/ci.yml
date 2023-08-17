@@ -24,6 +24,9 @@ jobs:
         pip install -r requirements.txt
         pip install pytest-cov
 
+    - name: Docker test's
+      run: docker run -v ./config:/config -p 8082:8082 -p 8083:8083 jordimartin/mmock
+
     - name: Run tests
       run: pytest
 
