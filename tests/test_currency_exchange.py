@@ -67,8 +67,13 @@ def test_currency_exchange_negative_source_wrong():
 
 
 # Negative test to check the response status from the API
+def test_currency_exchange_api_status_negative():
+    print(currency_exchange())
+    return
+
+
 @patch('src.currency_exchange.requests.get')
-def test_currency_exchange_api_status_negative(mock_get):
+def test_currency_exchange_api_status_mock_negative(mock_get):
     # Create a mock object to simulate a response from API with an incorrect status
     response_mock = Mock(spec=Response)
     response_mock.status_code = 404  # Set status code 404

@@ -1,0 +1,10 @@
+---
+request:
+  method: GET
+  path: "/hello/*"
+response:
+  statusCode: 500
+  headers:
+    Content-Type:
+    - application/json
+  body: '{"hello": "{{request.query.name}}, my name is {{fake.FirstName}}"}'

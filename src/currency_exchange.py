@@ -26,14 +26,14 @@ def currency_exchange(base: str = 'USD',
     Raises:
         ValueError: If the `base` or `symbols` parameter is not a string.
         ValueError: If the `base` parameter does not belong to ['USD', 'EUR', 'JPY'].
-        ValueError: If the parameter `symbols` or `symbols` is not a string.
+        ValueError: If the `symbols` is not a string.
         ValueError: If the `symbols` parameter does not belong to ['USD', 'EUR', 'JPY'].
-        ValueError: If the parameter `amount` is not a number, is less than or equal to zero, has more than 20 characters.
+        ValueError: If the `amount` is not a number, is less than or equal to zero, has more than 20 characters.
         ValueError: If the `amount` parameter is less than or equal to zero.
         ValueError: If the `amount` parameter has more than 20 characters.
         ValueError: If the `places` parameter is not an integer less than zero.
         ValueError: If the `places` parameter has more than 5 characters.
-        ValueError: If the ``source` parameter does not belong to ['ecb', 'cbr', 'imf'].
+        ValueError: If the `source` parameter does not belong to ['ecb', 'cbr', 'imf'].
         ValueError: If the response from the API does not contain rates data or is not a number.
 
     """
@@ -60,7 +60,8 @@ def currency_exchange(base: str = 'USD',
     if source not in ['ecb', 'cbr', 'imf']:
         raise ValueError("Parameter 'source' must be one of ['ecb', 'cbr', 'imf'].")
 
-    url = 'https://api.exchangerate.host/latest'
+    # url = 'https://api.exchangerate.host/latest'
+    url = 'http://0.0.0.0:8083/latest'
     query_parameters = {'base': base, 'symbols': symbols, 'amount': amount, 'places': places, 'source': source}
     response = requests.get(url, params=query_parameters)
 
@@ -77,4 +78,3 @@ def currency_exchange(base: str = 'USD',
     result = data['rates'][symbols]
 
     return result
-

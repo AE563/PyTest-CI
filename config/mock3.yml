@@ -1,0 +1,10 @@
+---
+request:
+  method: GET
+  path: "/latest"
+response:
+  statusCode: 404
+  headers:
+    Content-Type:
+    - application/json
+  body: '{"test_currency_exchange_api_status_negative"}'
