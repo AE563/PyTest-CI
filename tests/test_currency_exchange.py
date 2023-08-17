@@ -16,69 +16,69 @@ def time_fixture(request):
     print(f"Test took {execution_time:.4f} seconds to run")
 
 
-# Позитивные тесты
+# Positive tests
 @patch('src.currency_exchange.requests.get')
 def test_currency_exchange_positive(mock_get):
-    # Создаем мок объект для имитации ответа от API
+    # Create a mock object to simulate a response from the API
     response_mock = Mock()
     response_mock.status_code = 200
     response_mock.json.return_value = {"base": "USD", "rates": {"EUR": 0.85}}
     mock_get.return_value = response_mock
 
-    # Проверяем успешную конвертацию с USD в EUR с базовой суммой 1
+    # Check successful conversion from USD to EUR with base amount 1
     result = currency_exchange(base='USD', symbols='EUR')
     assert isinstance(result, float)
 
 
-# Негативные тесты
+# Negative tests
 def test_currency_exchange_negative_base_value_error():
     with pytest.raises(ValueError):
-        currency_exchange(base='RUB')  # Некорректный базовый параметр
+        currency_exchange(base='RUB')  # Invalid base parameter
 
 
 def test_currency_exchange_negative_symbols_value_error():
     with pytest.raises(ValueError):
-        currency_exchange(symbols='RUB')  # Некорректный базовый параметр
+        currency_exchange(symbols='RUB')  # Invalid base parameter
 
 
 def test_currency_exchange_negative_amount_negative_number():
     with pytest.raises(ValueError):
-        currency_exchange(amount=-10)  # Отрицательная базовая сумма
+        currency_exchange(amount=-10)  # Negative base amount
 
 
 def test_currency_exchange_negative_amount_long_number():
     with pytest.raises(ValueError):
-        currency_exchange(amount=123456789012345678901)  # Базовая сумма слишком большая
+        currency_exchange(amount=123456789012345678901)  # The base amount is too high
 
 
 def test_currency_exchange_negative_places_negative_number():
     with pytest.raises(ValueError):
-        currency_exchange(places=-1)  # Отрицательное округление
+        currency_exchange(places=-1)  # Negative rounding
 
 
 def test_currency_exchange_negative_places_long_number():
     with pytest.raises(ValueError):
-        currency_exchange(places=1234567)  # Слишком большое округление
+        currency_exchange(places=1234567)  # Too much rounding
 
 
 def test_currency_exchange_negative_source_wrong():
     with pytest.raises(ValueError):
-        currency_exchange(source='wrong_source')  # Некорректный источник
+        currency_exchange(source='wrong_source')  # Incorrect Source
 
 
-# Негативный тест для проверки статуса ответа от API
+# Negative test to check the response status from the API
 @patch('src.currency_exchange.requests.get')
 def test_currency_exchange_api_status_negative(mock_get):
-    # Создаем мок объект для имитации ответа от API с некорректным статусом
+    # Create a mock object to simulate a response from API with an incorrect status
     response_mock = Mock(spec=Response)
-    response_mock.status_code = 404  # Устанавливаем статус код 404
+    response_mock.status_code = 404  # Set status code 404
     mock_get.return_value = response_mock
 
-    # Проверяем, что функция вызовет ValueError с соответствующим сообщением
+    # Check that the function will call ValueError with the corresponding message
     with pytest.raises(ValueError, match=r"Invalid response from API: Status code 404"):
         currency_exchange(base='USD', symbols='EUR', amount=100)
 
-    # Проверяем, что запрос к API был выполнен с нужными параметрами
+    # Check that the API request has been executed with the required parameters
     mock_get.assert_called_once_with(
         'https://api.exchangerate.host/latest',
         params={'base': 'USD', 'symbols': 'EUR', 'amount': 100, 'places': 2, 'source': 'ecb'}

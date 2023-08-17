@@ -7,28 +7,34 @@ def currency_exchange(base: str = 'USD',
                       places: int = 2,
                       source: str = 'ecb') -> float:
     """
-    Функция, выполняющая конвертации пары валют.
+    Function that performs currency pair conversions.
 
     Args:
-        base (str): Базовая валюта. Должен быть одним из ['USD', 'EUR', 'JPY'].
-        symbols (str): Конечная валюта. Должен быть одним из ['USD', 'EUR', 'JPY'].
-        amount (float): Сумма конвертации.
-        places (int): Округление, количество знаков после запятой.
-        source (str): Банк, источника данных. Должен быть одним из ['ecb', 'cbr', 'imf'].
-            :Возможные значения для параметра `source`(https://api.exchangerate.host/sources):
-            - 'ecb': Центральный банк Европы. Нет возможности конвертировать рубли.
-            - 'cbr': Центральный Банк России. Не возвращает данные (работает по xml).
-            - 'imf': Международный валютный фонд. Все ОК.
+        base (str): Base currency. Must be one of ['USD', 'EUR', 'JPY'].
+        symbols (str): Ultimate currency. Must be one of ['USD', 'EUR', 'JPY'].
+        amount (float): The conversion amount.
+        places (int): Rounding, number of decimal places.
+        source (str): Bank, data source. Must be one of ['ecb', 'cbr', 'imf'].
+            :Possible values for the `source`(https://api.exchangerate.host/sources) parameter:
+            - 'ecb': Central Bank of Europe. There is no possibility to convert rubles.
+            - 'cbr': Central Bank of Russia. Does not return data (works by xml).
+            - 'imf': International Monetary Fund. All OK.
 
     Returns:
-        float: Результат конвертации валют
+        float: Currency conversion result
 
     Raises:
-        ValueError: Если параметр `base` или `symbols` не является строкой.
-        ValueError: Если параметр `amount` не является числом, меньше или равен нулю, имеет более 20 знаков.
-        ValueError: Если параметр `places` не является целым числом, меньше нуля, имеет более 5 знаков.
-        ValueError: Если параметр `source` не принадлежит к ['ecb', 'cbr', 'imf'].
-        ValueError: Если ответ от API не содержит данные rates или не является числом.
+        ValueError: If the `base` or `symbols` parameter is not a string.
+        ValueError: If the `base` parameter does not belong to ['USD', 'EUR', 'JPY'].
+        ValueError: If the parameter `symbols` or `symbols` is not a string.
+        ValueError: If the `symbols` parameter does not belong to ['USD', 'EUR', 'JPY'].
+        ValueError: If the parameter `amount` is not a number, is less than or equal to zero, has more than 20 characters.
+        ValueError: If the `amount` parameter is less than or equal to zero.
+        ValueError: If the `amount` parameter has more than 20 characters.
+        ValueError: If the `places` parameter is not an integer less than zero.
+        ValueError: If the `places` parameter has more than 5 characters.
+        ValueError: If the ``source` parameter does not belong to ['ecb', 'cbr', 'imf'].
+        ValueError: If the response from the API does not contain rates data or is not a number.
 
     """
     if not isinstance(base, str):
@@ -58,13 +64,13 @@ def currency_exchange(base: str = 'USD',
     query_parameters = {'base': base, 'symbols': symbols, 'amount': amount, 'places': places, 'source': source}
     response = requests.get(url, params=query_parameters)
 
-    # Проверка статуса ответа от API
+    # Checking the response status from the API
     if response.status_code != 200:
         raise ValueError(f"Invalid response from API: Status code {response.status_code}")
 
     data = response.json()
 
-    # Проверка ответа от API
+    # Checking the response from the API
     if not data.get('rates') or not isinstance(data['rates'].get(symbols), (int, float)):
         raise ValueError("Invalid response from API: rates not found or not a number.")
 
