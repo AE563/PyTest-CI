@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="comment ru-&gt;en">
-      <change afterPath="$PROJECT_DIR$/config/mock1.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/mock3.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currency_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/currency_exchange.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_currency_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_currency_exchange.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ae563/PycharmProjects/djsite",
+    "last_opened_file_path": "/home/ae563/PycharmProjects/PyTest-CI",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,7 +85,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_currency_exchange.test_currency_exchange_api_status_negative">
+  <component name="RunManager" selected="Python tests.Python tests in test_currency_exchange.py">
     <configuration name="currency_exchange" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyTest-CI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,8 +170,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_currency_exchange.test_currency_exchange_api_status_negative" />
         <item itemvalue="Python tests.Python tests in test_currency_exchange.py" />
+        <item itemvalue="Python tests.Python tests for test_currency_exchange.test_currency_exchange_api_status_negative" />
         <item itemvalue="Python tests.Python tests for test_currency_exchange.test_currency_exchange_negative_base_value_error" />
         <item itemvalue="Python.currency_exchange" />
         <item itemvalue="Python tests.Python tests for tests.test_currency_exchange.test_currency_exchange_api_status_negative" />
@@ -193,6 +191,9 @@
       <workItem from="1692150378995" duration="276000" />
       <workItem from="1692270202973" duration="1068000" />
       <workItem from="1692290327796" duration="11935000" />
+      <workItem from="1692462336054" duration="627000" />
+      <workItem from="1692481965524" duration="67000" />
+      <workItem from="1692691336356" duration="1394000" />
     </task>
     <task id="LOCAL-00025" summary="minor fix">
       <option name="closed" value="true" />
@@ -616,6 +617,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="comment ru-&gt;en" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PyTest_CI$.coverage" NAME=" Coverage Results" MODIFIED="1692304478077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/PyTest_CI$.coverage" NAME=" Coverage Results" MODIFIED="1692696355269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
