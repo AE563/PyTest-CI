@@ -23,6 +23,9 @@ def docker_container():
 
     yield container
 
+    container.stop()
+    container.remove()
+
 
 @pytest.fixture(scope="function", autouse=True)
 def time_fixture(request):
