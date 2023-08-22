@@ -14,17 +14,19 @@ config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'config'))
 
 @pytest.fixture(scope="module")
 def docker_container():
-    # Здесь вы можете настроить и запустить Docker контейнер перед тестами
-    client = docker.from_env()
-    container = client.containers.run("jordimartin/mmock",
-                                      detach=True,
-                                      volumes={'config_path': {'bind': '/config', 'mode': 'rw'}},
-                                      ports={'8082/tcp': 8082, '8083/tcp': 8083})
+    if os.environ.get('GITHUB_ACTIONS') != 'true':
+        client = docker.from_env()
+        container = client.containers.run("jordimartin/mmock",
+                                          detach=True,
+                                          volumes={config_path: {'bind': '/config', 'mode': 'rw'}},
+                                          ports={'8082/tcp': 8082, '8084/tcp': 8084})
 
-    yield container
+        yield container
 
-    container.stop()
-    container.remove()
+        container.stop()
+        container.remove()
+    else:
+        yield None
 
 
 @pytest.fixture(scope="function", autouse=True)
