@@ -1,10 +1,27 @@
+import os
 import pytest
 import time
-from requests import Response
+import docker
 
 from unittest.mock import Mock, patch
 
 from src.currency_exchange import currency_exchange
+
+
+# Путь к файлу конфигурации
+config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'config'))
+
+
+@pytest.fixture(scope="module")
+def docker_container():
+    # Здесь вы можете настроить и запустить Docker контейнер перед тестами
+    client = docker.from_env()
+    container = client.containers.run("jordimartin/mmock",
+                                      detach=True,
+                                      volumes={'config_path': {'bind': '/config', 'mode': 'rw'}},
+                                      ports={'8082/tcp': 8082, '8083/tcp': 8083})
+
+    yield container
 
 
 @pytest.fixture(scope="function", autouse=True)
@@ -67,25 +84,7 @@ def test_currency_exchange_negative_source_wrong():
 
 
 # Negative test to check the response status from the API
-def test_currency_exchange_api_status_negative():
+def test_currency_exchange_api_status_negative(docker_container):
     with pytest.raises(ValueError):
         currency_exchange()
     return
-
-
-# @patch('src.currency_exchange.requests.get')
-# def test_currency_exchange_api_status_mock_negative(mock_get):
-#     # Create a mock object to simulate a response from API with an incorrect status
-#     response_mock = Mock(spec=Response)
-#     response_mock.status_code = 404  # Set status code 404
-#     mock_get.return_value = response_mock
-#
-#     # Check that the function will call ValueError with the corresponding message
-#     with pytest.raises(ValueError, match=r"Invalid response from API: Status code 404"):
-#         currency_exchange(base='USD', symbols='EUR', amount=100)
-#
-#     # Check that the API request has been executed with the required parameters
-#     mock_get.assert_called_once_with(
-#         'https://api.exchangerate.host/latest',
-#         params={'base': 'USD', 'symbols': 'EUR', 'amount': 100, 'places': 2, 'source': 'ecb'}
-#     )

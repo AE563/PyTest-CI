@@ -3,7 +3,7 @@ request:
   method: GET
   path: "/latest"
 response:
-  statusCode: 404
+  statusCode: 400
   headers:
     Content-Type:
     - application/json
