@@ -1,6 +1,5 @@
 [![CI](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml/badge.svg)](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/AE563/PyTest-CI/branch/main/graph/badge.svg?token=6WH63OWSW2)](https://codecov.io/gh/AE563/PyTest-CI)
-[![CI](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml/badge.svg?branch=main&event=deployment)](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml)
 
 <h1 align="center">*</h1>
 
