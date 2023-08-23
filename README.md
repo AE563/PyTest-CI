@@ -64,7 +64,7 @@ The CI/CD pipeline performs the following steps:
 
 2. **Docker Setup**: As part of the testing process, a Docker container is set up using the `jordimartin/mmock` image. This container is used to mock API responses and isolate the testing environment.
 
-3. **Mocking API Responses**: The function's behavior is tested under various scenarios by using the `unittest.mock` library to mock the behavior of external APIs. This allows controlled testing without making actual API requests.
+3. **Mocking API Responses**: The function's behavior is tested under various scenarios by using the [Mmock(aka Monsters Mock)](https://github.com/jmartin82/mmock) library to mock the behavior of external APIs. This allows controlled testing without making actual API requests.
 
 4. **Code Coverage**: Test coverage analysis is integrated into the pipeline to measure the percentage of code covered by tests. This provides insights into which parts of the codebase are thoroughly tested and identifies areas that may require additional testing.
 
