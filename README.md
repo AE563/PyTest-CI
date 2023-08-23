@@ -1,6 +1,13 @@
 [![CI](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml/badge.svg)](https://github.com/AE563/PyTest-CI/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/AE563/PyTest-CI/branch/main/graph/badge.svg?token=6WH63OWSW2)](https://codecov.io/gh/AE563/PyTest-CI)
 
+- [Function Description](#function-description)
+- [Test Cases](#test-cases)
+- [Docker Setup for Testing](#docker-setup-for-testing)
+- [Mocking API Responses](#mocking-api-responses)
+- [Continuous Integration / Continuous Deployment (CI/CD)](#continuous-integration--continuous-deployment-cicd)
+- [Running Tests](#running-tests)
+
 # Currency Exchange Function and Tests
 
 This repository contains a Python function `currency_exchange` that performs currency pair conversions. It also includes positive and negative test cases for the function. This work was completed as part of a test assignment for a job interview.
