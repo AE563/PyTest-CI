@@ -13,7 +13,7 @@ ERROR_MESSAGES = {
     "places_positive": "Parameter 'places' must be a positive number.",
     "places_length": "Parameter 'places' must have at most 5 digits.",
     "source_value": "Parameter 'source' must be one of ['ecb', 'cbr', 'imf'].",
-    "invalid_api_response": "Invalid response from API: rates not found or not a number.",
+    "invalid_api_response": "Invalid response from API: rates not found or not number.",
 }
 
 
@@ -32,7 +32,7 @@ def currency_exchange(base: str = 'USD',
         amount (float): The conversion amount.
         places (int): Rounding, number of decimal places.
         source (str): Bank, data source. Must be one of ['ecb', 'cbr', 'imf'].
-            Possible values for the `source`(https://api.exchangerate.host/sources) parameter:
+            Possible values for the `source`(https://api.exchangerate.host/sources):
             - 'ecb': Central Bank of Europe. There is no possibility to convert rubles.
             - 'cbr': Central Bank of Russia. Does not return data (works by xml).
             - 'imf': International Monetary Fund. All OK.
@@ -46,13 +46,13 @@ def currency_exchange(base: str = 'USD',
         ValueError: If the `base` parameter does not belong to ['USD', 'EUR', 'JPY'].
         ValueError: If the `symbols` is not a string.
         ValueError: If the `symbols` parameter does not belong to ['USD', 'EUR', 'JPY'].
-        ValueError: If the `amount` is not a number, is less than or equal to zero, has more than 20 characters.
+        ValueError: If the `amount` is not a number.
         ValueError: If the `amount` parameter is less than or equal to zero.
         ValueError: If the `amount` parameter has more than 20 characters.
         ValueError: If the `places` parameter is not an integer less than zero.
         ValueError: If the `places` parameter has more than 5 characters.
         ValueError: If the `source` parameter does not belong to ['ecb', 'cbr', 'imf'].
-        ValueError: If the response from the API does not contain rates data or is not a number.
+        ValueError: If the response does not contain rates data or not a number.
 
     """
 
@@ -77,17 +77,22 @@ def currency_exchange(base: str = 'USD',
     if source not in ['ecb', 'cbr', 'imf']:
         raise ValueError(ERROR_MESSAGES["source_value"])
 
-    query_parameters = {'base': base, 'symbols': symbols, 'amount': amount, 'places': places, 'source': source}
+    query_parameters = {'base': base,
+                        'symbols': symbols,
+                        'amount': amount,
+                        'places': places,
+                        'source': source}
     response = requests.get(url, params=query_parameters)
 
     # Checking the response status from the API
     if response.status_code != 200:
-        raise ValueError(f"Invalid response from API: Status code {response.status_code}")
+        raise ValueError(f"Invalid API response: Status code {response.status_code}")
 
     data = response.json()
 
     # Checking the response from the API
-    if not data.get('rates') or not isinstance(data['rates'].get(symbols), (int, float)):
+    if not data.get('rates') or \
+            not isinstance(data['rates'].get(symbols), (int, float)):
         raise ValueError(ERROR_MESSAGES["invalid_api_response"])
 
     result = data['rates'][symbols]

@@ -2,7 +2,7 @@ import os
 import pytest
 import docker
 
-from config import mock_config_path
+from config import mock_conf_path
 from src.currency_exchange import currency_exchange, ERROR_MESSAGES
 
 
@@ -20,7 +20,7 @@ def docker_container():
         client = docker.from_env()
         container = client.containers.run("jordimartin/mmock",
                                           detach=True,
-                                          volumes={mock_config_path: {'bind': '/config', 'mode': 'rw'}},
+                                          volumes={mock_conf_path: {'bind': '/config'}},
                                           ports={'8082': 8082, '8083': 8083})
 
         yield container
@@ -100,5 +100,5 @@ def test_currency_exchange_api_status_negative(docker_container):
     with pytest.raises(ValueError) as excinfo:
         currency_exchange(url='http://0.0.0.0:8083/status-code404')
 
-    expected_prefix = "Invalid response from API: Status code "
+    expected_prefix = "Invalid API response: Status code "
     assert str(excinfo.value).startswith(expected_prefix)
