@@ -5,11 +5,8 @@ import docker
 
 from unittest.mock import Mock, patch
 
+from config import mock_config_path
 from src.currency_exchange import currency_exchange
-
-
-# Путь к файлу конфигурации
-config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'config'))
 
 
 @pytest.fixture(scope="module")
@@ -18,8 +15,8 @@ def docker_container():
         client = docker.from_env()
         container = client.containers.run("jordimartin/mmock",
                                           detach=True,
-                                          volumes={config_path: {'bind': '/config', 'mode': 'rw'}},
-                                          ports={'8082/tcp': 8082, '8084/tcp': 8084})
+                                          volumes={mock_config_path: {'bind': '/config', 'mode': 'rw'}},
+                                          ports={'8082': 8082, '8083': 8083})
 
         yield container
 
