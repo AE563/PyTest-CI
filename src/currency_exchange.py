@@ -1,5 +1,4 @@
 import requests
-from config import DEBUG
 
 
 ERROR_MESSAGES = {
@@ -22,7 +21,8 @@ def currency_exchange(base: str = 'USD',
                       symbols: str = 'EUR',
                       amount: float = 1.0,
                       places: int = 2,
-                      source: str = 'ecb') -> float:
+                      source: str = 'ecb',
+                      url: str = 'https://api.exchangerate.host/latest') -> float:
     """
     Function that performs currency pair conversions.
 
@@ -36,6 +36,7 @@ def currency_exchange(base: str = 'USD',
             - 'ecb': Central Bank of Europe. There is no possibility to convert rubles.
             - 'cbr': Central Bank of Russia. Does not return data (works by xml).
             - 'imf': International Monetary Fund. All OK.
+        url (str):
 
     Returns:
         float: Currency conversion result
@@ -75,11 +76,6 @@ def currency_exchange(base: str = 'USD',
         raise ValueError(ERROR_MESSAGES["places_length"])
     if source not in ['ecb', 'cbr', 'imf']:
         raise ValueError(ERROR_MESSAGES["source_value"])
-
-    url = 'https://api.exchangerate.host/latest'
-    # Mock url for test's
-    if DEBUG is True:
-        url = 'http://0.0.0.0:8083/status-code404'
 
     query_parameters = {'base': base, 'symbols': symbols, 'amount': amount, 'places': places, 'source': source}
     response = requests.get(url, params=query_parameters)
