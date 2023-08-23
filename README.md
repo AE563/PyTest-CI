@@ -17,7 +17,7 @@ ____
 
 <h1 align="center">***</h1>
 
-- [ ] Использовать [mmock](https://github.com/jmartin82/mmock) в своем GithubActions из пункта выше. Автоматизировать.
+- [x] Использовать [mmock](https://github.com/jmartin82/mmock) в своем GithubActions из пункта выше. Автоматизировать.
 ____
 
 <h1 align="center">ToDo</h1>

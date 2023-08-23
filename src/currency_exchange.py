@@ -1,4 +1,5 @@
 import requests
+from config import DEBUG
 
 
 def currency_exchange(base: str = 'USD',
