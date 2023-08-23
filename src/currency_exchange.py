@@ -2,6 +2,22 @@ import requests
 from config import DEBUG
 
 
+ERROR_MESSAGES = {
+    "base_string": "Parameter 'base' must be a string.",
+    "base_value": "Parameter 'base' must be one of ['USD', 'EUR', 'JPY'].",
+    "symbols_string": "Parameter 'symbols' must be a string.",
+    "symbols_value": "Parameter 'symbols' must be one of ['USD', 'EUR', 'JPY'].",
+    "amount_type": "Parameter 'amount' must be a number.",
+    "amount_positive": "Parameter 'amount' must be a positive number.",
+    "amount_length": "Parameter 'amount' must have at most 20 digits.",
+    "places_type": "Parameter 'places' must be an integer.",
+    "places_positive": "Parameter 'places' must be a positive number.",
+    "places_length": "Parameter 'places' must have at most 5 digits.",
+    "source_value": "Parameter 'source' must be one of ['ecb', 'cbr', 'imf'].",
+    "invalid_api_response": "Invalid response from API: rates not found or not a number.",
+}
+
+
 def currency_exchange(base: str = 'USD',
                       symbols: str = 'EUR',
                       amount: float = 1.0,
@@ -16,7 +32,7 @@ def currency_exchange(base: str = 'USD',
         amount (float): The conversion amount.
         places (int): Rounding, number of decimal places.
         source (str): Bank, data source. Must be one of ['ecb', 'cbr', 'imf'].
-            :Possible values for the `source`(https://api.exchangerate.host/sources) parameter:
+            Possible values for the `source`(https://api.exchangerate.host/sources) parameter:
             - 'ecb': Central Bank of Europe. There is no possibility to convert rubles.
             - 'cbr': Central Bank of Russia. Does not return data (works by xml).
             - 'imf': International Monetary Fund. All OK.
@@ -38,31 +54,33 @@ def currency_exchange(base: str = 'USD',
         ValueError: If the response from the API does not contain rates data or is not a number.
 
     """
-    if not isinstance(base, str):
-        raise ValueError("Parameter 'base' must be a string.")
-    if base not in ['USD', 'EUR', 'JPY']:
-        raise ValueError("Parameter 'base' must be one of ['USD', 'EUR', 'JPY'].")
-    if not isinstance(symbols, str):
-        raise ValueError("Parameter 'symbols' must be a string.")
-    if symbols not in ['USD', 'EUR', 'JPY']:
-        raise ValueError("Parameter 'symbols' must be one of ['USD', 'EUR', 'JPY'].")
-    if not isinstance(amount, (int, float)):
-        raise ValueError("Parameter 'amount' must be a number.")
-    if amount <= 0:
-        raise ValueError("Parameter 'amount' must be a positive number.")
-    if len(str(amount)) > 20:
-        raise ValueError("Parameter 'amount' must have at most 20 digits.")
-    if not isinstance(places, int):
-        raise ValueError("Parameter 'places' must be an integer.")
-    if places <= 0:
-        raise ValueError("Parameter 'places' must be a positive number.")
-    if len(str(places)) > 5:
-        raise ValueError("Parameter 'places' must have at most 5 digits.")
-    if source not in ['ecb', 'cbr', 'imf']:
-        raise ValueError("Parameter 'source' must be one of ['ecb', 'cbr', 'imf'].")
 
-    # url = 'https://api.exchangerate.host/latest'
-    url = 'http://0.0.0.0:8083/latest'
+    if base not in ['USD', 'EUR', 'JPY']:
+        raise ValueError(ERROR_MESSAGES["base_value"])
+    if not isinstance(symbols, str):
+        raise ValueError(ERROR_MESSAGES["symbols_string"])
+    if symbols not in ['USD', 'EUR', 'JPY']:
+        raise ValueError(ERROR_MESSAGES["symbols_value"])
+    if not isinstance(amount, (int, float)):
+        raise ValueError(ERROR_MESSAGES["amount_type"])
+    if amount <= 0:
+        raise ValueError(ERROR_MESSAGES["amount_positive"])
+    if len(str(amount)) > 20:
+        raise ValueError(ERROR_MESSAGES["amount_length"])
+    if not isinstance(places, int):
+        raise ValueError(ERROR_MESSAGES["places_type"])
+    if places <= 0:
+        raise ValueError(ERROR_MESSAGES["places_positive"])
+    if len(str(places)) > 5:
+        raise ValueError(ERROR_MESSAGES["places_length"])
+    if source not in ['ecb', 'cbr', 'imf']:
+        raise ValueError(ERROR_MESSAGES["source_value"])
+
+    url = 'https://api.exchangerate.host/latest'
+    # Mock url for test's
+    if DEBUG is True:
+        url = 'http://0.0.0.0:8083/status-code404'
+
     query_parameters = {'base': base, 'symbols': symbols, 'amount': amount, 'places': places, 'source': source}
     response = requests.get(url, params=query_parameters)
 
@@ -74,7 +92,7 @@ def currency_exchange(base: str = 'USD',
 
     # Checking the response from the API
     if not data.get('rates') or not isinstance(data['rates'].get(symbols), (int, float)):
-        raise ValueError("Invalid response from API: rates not found or not a number.")
+        raise ValueError(ERROR_MESSAGES["invalid_api_response"])
 
     result = data['rates'][symbols]
 

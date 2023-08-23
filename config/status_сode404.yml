@@ -1,9 +1,9 @@
 ---
 request:
   method: GET
-  path: "/latest"
+  path: "/status-сode400"
 response:
-  statusCode: 400
+  statusCode: 404
   headers:
     Content-Type:
     - application/json
