@@ -1,7 +1,7 @@
 ---
 request:
   method: GET
-  path: "/status-сode400"
+  path: "/status-code404"
 response:
   statusCode: 404
   headers:

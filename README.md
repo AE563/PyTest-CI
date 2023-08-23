@@ -6,6 +6,7 @@
 - [Docker Setup for Testing](#docker-setup-for-testing)
 - [Mocking API Responses](#mocking-api-responses)
 - [Continuous Integration / Continuous Deployment (CI/CD)](#continuous-integration--continuous-deployment-cicd)
+- [Linter](#linter)
 - [Running Tests](#running-tests)
 
 # Currency Exchange Function and Tests
@@ -21,7 +22,7 @@ The `currency_exchange` function takes the following parameters:
 - `amount` (float): The conversion amount (default: 1.0).
 - `places` (int): Rounding, number of decimal places (default: 2).
 - `source` (str): Data source for exchange rates. Possible values are 'ecb', 'cbr', 'imf' (default: 'ecb').
-- `url` (str): API URL arugment added separately for ease of testing (default: 'https://api.exchangerate.host/latest').
+- `url` (str): API URL argument added separately for ease of testing (default: 'https://api.exchangerate.host/latest').
 
 The function returns the result of currency conversion as a float.
 
@@ -73,6 +74,15 @@ The CI/CD pipeline performs the following steps:
 
 By automating the testing process, integrating code coverage analysis, and incorporating deployment steps, this project ensures that the currency exchange function is thoroughly tested, validated, and seamlessly deployed. This contributes to maintaining the reliability and stability of the codebase while optimizing the development workflow.
 
+## Linter
+The project also includes code checking with Flake8, a popular linter for Python. Running code checking with Flake8 allows you to keep track of style standards and detect potential bugs.
+
+To run the Flake8 linter, make sure you have the required dependencies installed, then execute:
+
+```bash
+flake8
+```
+
 ## Running Tests
 
 To run the tests, you need to have Python and the pytest library installed. Here's how you can set up the environment and run the tests:
@@ -87,7 +97,7 @@ To run the tests, you need to have Python and the pytest library installed. Here
 2. **Environment Setup**:
     - Clone the repository to your local machine.
     ```bash
-   git clone git@github.com:AE563/PyTest-CI.git
+    git clone git@github.com:AE563/PyTest-CI.git
     ```
     - Navigate to the project directory using the terminal.
 
