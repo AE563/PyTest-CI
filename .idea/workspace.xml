@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="test2">
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MmockMonster_test/.idea/MmockMonster_test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MmockMonster_test/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MmockMonster_test/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MmockMonster_test/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MmockMonster_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MmockMonster_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MmockMonster_test/config/mock1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../MmockMonster_test/config/mock1.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mock1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/mock1.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_currency_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_currency_exchange.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pythonProject1/.idea/pyGameTest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pythonProject2/.idea/pythonProject2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pythonProject3/.idea/pythonProject3.iml" beforeDir="false" />
+    <list default="true" id="12580729-e23b-42c1-8340-2423f2b3f71e" name="Changes" comment="fix">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,23 +197,7 @@
       <workItem from="1692773302669" duration="538000" />
       <workItem from="1692773879313" duration="14000" />
       <workItem from="1692828058642" duration="233000" />
-      <workItem from="1692814248554" duration="1210000" />
-    </task>
-    <task id="LOCAL-00028" summary="minor fix">
-      <option name="closed" value="true" />
-      <created>1691778466304</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1691778466304</updated>
-    </task>
-    <task id="LOCAL-00029" summary="minor fix">
-      <option name="closed" value="true" />
-      <created>1691779125149</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1691779125149</updated>
+      <workItem from="1692814248554" duration="1657000" />
     </task>
     <task id="LOCAL-00030" summary="minor fix">
       <option name="closed" value="true" />
@@ -601,7 +575,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692701788085</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="update">
+      <option name="closed" value="true" />
+      <created>1692816129178</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1692816129178</updated>
+    </task>
+    <task id="LOCAL-00078" summary="fix">
+      <option name="closed" value="true" />
+      <created>1692816225107</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1692816225107</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,15 +626,16 @@
     <MESSAGE value="edit README.md" />
     <MESSAGE value="add time_fixture" />
     <MESSAGE value="try to test's ssh knock knock" />
-    <MESSAGE value="fix" />
     <MESSAGE value="final-v deploy" />
     <MESSAGE value="comment ru-&gt;en" />
     <MESSAGE value="comment pytest.ini" />
     <MESSAGE value="test" />
     <MESSAGE value="test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test2" />
+    <MESSAGE value="update" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PyTest_CI$.coverage" NAME=" Coverage Results" MODIFIED="1692705804244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyTest_CI$.coverage" NAME=" Coverage Results" MODIFIED="1692816081226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
