@@ -80,7 +80,7 @@ def currency_exchange(base: str = 'USD',
 
     # Checking the response status from the API
     if response.status_code != 200:
-        raise ValueError(f"Invalid API response: Status code: {response.status_code}")
+        raise ValueError(f"Invalid API response. Status code: {response.status_code}")
 
     data = response.json()
 

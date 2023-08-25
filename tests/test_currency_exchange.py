@@ -107,5 +107,5 @@ def test_currency_exchange_api_status_negative(docker_container):
         with pytest.raises(ValueError) as excinfo:
             currency_exchange()
 
-    expected_prefix = "Invalid API response: Status code: "
+    expected_prefix = "Invalid API response. Status code: "
     assert str(excinfo.value).startswith(expected_prefix)
