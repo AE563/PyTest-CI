@@ -22,7 +22,6 @@ The `currency_exchange` function takes the following parameters:
 - `amount` (float): The conversion amount (default: 1.0).
 - `places` (int): Rounding, number of decimal places (default: 2).
 - `source` (str): Data source for exchange rates. Possible values are 'ecb', 'cbr', 'imf' (default: 'ecb').
-- `url` (str): API URL argument added separately for ease of testing (default: 'https://api.exchangerate.host/latest').
 
 The function returns the result of currency conversion as a float.
 
