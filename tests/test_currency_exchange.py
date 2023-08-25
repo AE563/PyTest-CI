@@ -1,6 +1,8 @@
 import os
+
 import pytest
 import docker
+from unittest import mock
 
 from config import mock_conf_path
 from src.currency_exchange import currency_exchange
@@ -34,8 +36,11 @@ def docker_container():
 # Positive tests
 def test_currency_exchange_positive(docker_container):
     expected_result = 0.92
-    result = currency_exchange(url='http://0.0.0.0:8083/latest')
-    assert result == expected_result, f"Expected {expected_result}, but got {result}"
+    with mock.patch("src.currency_exchange.api_currency_exchange",
+                    "http://0.0.0.0:8083/latest"):
+        result = currency_exchange()
+        assert result == expected_result, (f"Expected {expected_result}, "
+                                           f"but got {result}")
 
 
 # Negative tests
@@ -97,8 +102,10 @@ def test_currency_exchange_negative_source_wrong():
 
 # Negative test to check the response status from the API
 def test_currency_exchange_api_status_negative(docker_container):
-    with pytest.raises(ValueError) as excinfo:
-        currency_exchange(url='http://0.0.0.0:8083/status-code404')
+    with mock.patch("src.currency_exchange.api_currency_exchange",
+                    "http://0.0.0.0:8083/status-code404"):
+        with pytest.raises(ValueError) as excinfo:
+            currency_exchange()
 
     expected_prefix = "Invalid API response: Status code: "
     assert str(excinfo.value).startswith(expected_prefix)

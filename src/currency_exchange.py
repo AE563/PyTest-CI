@@ -1,12 +1,12 @@
 import requests
+from config import api_currency_exchange
 
 
 def currency_exchange(base: str = 'USD',
                       symbols: str = 'EUR',
                       amount: float = 1.0,
                       places: int = 2,
-                      source: str = 'ecb',
-                      url: str = 'https://api.exchangerate.host/latest') -> float:
+                      source: str = 'ecb') -> float:
     """
     Function that performs currency pair conversions.
 
@@ -20,7 +20,6 @@ def currency_exchange(base: str = 'USD',
             - 'ecb': Central Bank of Europe. There is no possibility to convert rubles.
             - 'cbr': Central Bank of Russia. Does not return data (works by xml).
             - 'imf': International Monetary Fund. All OK.
-        url (str):
 
     Returns:
         float: Currency conversion result
@@ -77,7 +76,7 @@ def currency_exchange(base: str = 'USD',
                         'amount': amount,
                         'places': places,
                         'source': source}
-    response = requests.get(url, params=query_parameters)
+    response = requests.get(api_currency_exchange, params=query_parameters)
 
     # Checking the response status from the API
     if response.status_code != 200:
