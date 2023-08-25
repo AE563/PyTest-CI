@@ -4,7 +4,7 @@ import pytest
 import docker
 from unittest import mock
 
-from config import mmock_conf_path
+from config import mock_conf_path
 from src.currency_exchange import currency_exchange
 
 
@@ -22,7 +22,7 @@ def docker_container():
         client = docker.from_env()
         container = client.containers.run("jordimartin/mmock",
                                           detach=True,
-                                          volumes={mmock_conf_path: {'bind': '/mmock_config'}},
+                                          volumes={mock_conf_path: {'bind': '/config'}},
                                           ports={'8082': 8082, '8083': 8083})
 
         yield container

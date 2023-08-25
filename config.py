@@ -2,5 +2,5 @@ import os
 
 
 api_currency_exchange = 'https://api.exchangerate.host/latest'
-mmock_conf_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
-                                               'mmock_config'))
+mock_conf_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                              'mmock_config'))
