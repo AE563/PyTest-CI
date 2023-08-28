@@ -51,7 +51,7 @@ The project uses Docker to set up a consistent testing environment. A Docker con
 
 ## Mocking API Responses
 
-To simulate different API responses during testing, the function uses the `unittest.mock` library to mock the behavior of external APIs. This allows controlled testing of various scenarios without making actual API requests.
+To simulate different API responses during testing, the function uses the [Mmock(aka Monsters Mock)](https://github.com/jmartin82/mmock) library to mock the behavior of external APIs. This allows controlled testing of various scenarios without making actual API requests.
 
 ## Continuous Integration / Continuous Deployment (CI/CD)
 
